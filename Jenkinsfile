@@ -31,6 +31,8 @@ stage ('test') {
         step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
         step([$class: 'ArtifactArchiver', artifacts: '**/failed-gui-tests/*.png', fingerprint: true])
     }
+    //TODO: Modify to use splitTests
+    //https://github.com/zapppp/jenkins-pipeline-example.git
     
     //def splits = splitTests count(2)
     //def branches = [:]
